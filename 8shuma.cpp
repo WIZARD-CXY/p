@@ -67,10 +67,6 @@ int bfs()
                 
                 dist[rear] = dist[front] +1;
                 if(try_to_insert(rear)){
-                    if(d==0) d=1;
-                    else if(d==1) d=0;
-                    else if(d==2) d=3;
-                    else d=2;
                     last_dir[rear]=d;   
                     fa[rear] = front;
                     lastZ[rear]=z;
@@ -89,7 +85,7 @@ void print_path(int front){
     if(fa[front]!=0){
         print_path(fa[front]);
     
-        printf("%d state move %dth element to direction %d\n",front,lastZ[front],last_dir[front]);
+        printf("move %dth element to direction %d\n",lastZ[front],last_dir[front]);
     } 
 }
 
