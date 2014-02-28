@@ -29,10 +29,7 @@ bool myCmp(const Road &a,const Road &b)
 }
 
 int Find_Set(int n){
-    if(node[n] == -1){
-        return n;
-    }
-    return node[n] = Find_Set(node[n]);
+    return node[n]==n?n:Find_Set(node[n]);
 }
 
 bool Merge(int s1, int s2){
@@ -53,7 +50,6 @@ bool Merge(int s1, int s2){
 int main(){
     freopen("input.txt","r",stdin);
 
-    memset(node,-1,sizeof(node));
 
     cout<<"input the number of node"<<endl;
     cin>>no;
@@ -61,6 +57,10 @@ int main(){
     cin>>line;
     cout<<"Input the edge"<<endl;
 
+
+     for(int i=0; i<no; i++){
+        node[i]=i;
+     }
 
     for(int i =0; i<line; i++){
         cin>>road[i].c1>>road[i].c2>>road[i].value;
@@ -84,7 +84,3 @@ int main(){
     }
     cout<<sum<<endl;
 }
-
-    
-    
-
