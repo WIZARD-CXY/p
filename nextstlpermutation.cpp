@@ -26,5 +26,5 @@ int main(){
         num++;
         printf("\n");
     }while(next_permutation(p,p+n));
-    printf("the permutation num is %d",num);
+    printf("the permutation num is %d\n",num);
 }

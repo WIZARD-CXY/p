@@ -14,7 +14,7 @@ int mat[MAXN][MAXN],visited[MAXN][MAXN];
 void dfs(int x,int y){
     if( !visited[x][y] && mat[x][y] ){
         visited[x][y] = 1;
-        dfs(x-1,y-1);dfs(x-1,y);dfs(x-1,y);
+        dfs(x-1,y-1);dfs(x-1,y);dfs(x-1,y+1);
         dfs(x,y-1);dfs(x,y+1);
         dfs(x+1,y-1);dfs(x+1,y);dfs(x+1,y+1);
     }
@@ -25,12 +25,13 @@ int main(){
     memset(visited,0,sizeof(visited));
 
     int n;
+
     scanf("%d",&n);
     char s[50];
     int count = 0;
+    
     for(int i=0; i<n; i++){
         scanf("%s",s);
-
 
         for(int j=0; j<n; j++){
             mat[i+1][j+1] = s[j]-'0';
