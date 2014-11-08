@@ -6,8 +6,14 @@
  ************************************************************************/
 
 #include<iostream>
+#include<vector>
+
 using namespace std;
 
 int main(){
+    vector<int> a(10,0);
+
+    a[1]=10;
+    cout<<a[1];
     cout<<5/2<<" "<<-5/2<<endl;
 }
