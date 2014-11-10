@@ -7,6 +7,7 @@
 
 #include<iostream>
 #include<vector>
+#include<cstdio>
 
 using namespace std;
 
@@ -16,4 +17,7 @@ int main(){
     a[1]=10;
     cout<<a[1];
     cout<<5/2<<" "<<-5/2<<endl;
+    double aa=0.03450;
+
+    printf("%.2E\n",aa);
 }
