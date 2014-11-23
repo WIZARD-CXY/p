@@ -5,11 +5,11 @@
 		> Created Time: Sun 23 Nov 2014 01:01:02 PM CST
 	 ************************************************************************/
 
-	#include<iostream>
-	using namespace std;
-	#include<cstdio>
-	#include<vector>
-	#include<algorithm>
+    #include<iostream>
+    using namespace std;
+    #include<cstdio>
+    #include<vector>
+    #include<algorithm>
 
 
 	char process(char a){
