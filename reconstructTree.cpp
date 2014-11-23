@@ -12,6 +12,9 @@ using namespace std;
 char ans[1000];
 
 void build(int n,char* s1,char* s2,char*s){
+    //s1 is preoder array
+    //s2 is inorder array
+    //s is postoder array
     if(n>0){
         int p = strchr(s2,s1[0])-s2;
         build(p,s1+1,s2,s); // recursive call in left sub-tree
