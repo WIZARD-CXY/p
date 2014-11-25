@@ -16,14 +16,15 @@ void build(int n,char* pre,char* in,char* post){
         int p=strchr(in,pre[0])-in;
         build(p,pre+1,in,post);
         build(n-p-1,pre+p+1,in+p+1,post+p);
-        post[--n]=pre[0];
+        post[n-1]=pre[0];
     }
 }
 
 int main(){
     char s1[100];
     char s2[100];
-    
+
+
     while(scanf("%s%s",s1,s2))
     {
         int n = strlen(s1);
