@@ -1,7 +1,14 @@
+#include<cstdio>
+#include<cstring>
+#include<algorithm>
+#include<iostream>
+using namespace std;
 #define MAXN 10000
 
 int c[MAXN];
 int topo[MAXN],t;
+int n;
+int G[MAXN][MAXN];
 
 bool dfs(int u){
    c[u]=-1;
@@ -9,7 +16,9 @@ bool dfs(int u){
    for(int v=0; v<n; v++){
       if(G[u][v]){
         if(c[v]<0) return 0;//exist cycle
-      } else if(c[v]!=0 && !dfs(v)) return 0;
+        else if(!c[v] && !dfs(v)) return 0;
+
+      }
    } 
    c[u]=1;
    topo[--t]=u;
@@ -30,5 +39,14 @@ bool toposort(){
    return true;
 }
 int main(){
+    n=4;
+    G[0][1]=1;
+    G[1][2]=1;
+    G[0][3]=1;
+    cout<<toposort()<<endl;
+
+    for(int i=0; i<n; i++){
+        cout<<topo[i]<<endl;
+    }
 }
     
