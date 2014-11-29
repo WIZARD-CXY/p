@@ -24,6 +24,7 @@ void merge(int x, int y){
     if(rx==ry){
         return;
     }
+    
     if(rank[rx]>rank[ry]){
         p[ry]=rx;
         num[rx]+=num[ry];
@@ -36,6 +37,7 @@ void merge(int x, int y){
         num[ry]+=num[rx];
     }
 }
+
 int main(){
     int n,m;
    
@@ -76,9 +78,5 @@ int main(){
         cout<<sum<<endl;
 
         //cout<<num[find(0)]<<endl;
-
     }
-
-    
-
 }

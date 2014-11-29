@@ -1,33 +1,33 @@
-	/*************************************************************************
-		> File Name: 1116.cpp
-		> Author: 
-		> Mail: 
-		> Created Time: Wed 26 Nov 2014 06:59:42 PM CST
-	 ************************************************************************/
+/*************************************************************************
+	> File Name: 1116.cpp
+	> Author: 
+	> Mail: 
+	> Created Time: Wed 26 Nov 2014 06:59:42 PM CST
+ ************************************************************************/
 
-	#include<iostream>
-	using namespace std;
-	#include<cstdio>
-	#define NMAX 8
+#include<iostream>
+using namespace std;
+#include<cstdio>
+#define NMAX 8
 
-	int mm[NMAX][NMAX];
-	int n;
-	int count;
-	int history[NMAX];
+int mm[NMAX][NMAX];
+int n;
+int count;
+int history[NMAX];
 
-	void dfs(int i){
-
-	    if(i==n){
+void dfs(int i){
+    if(i==n){
 		count++;
 		
 		for(int i=0; i<n; i++){
 		    cout<<history[i]<<" ";
 		}
+		
 		cout<<endl;
 		return;
-	    }
+    }
 
-	    for (int c=1; c<5; c++){
+    for (int c=1; c<5; c++){
 		int ok=1;
 
 		for(int j=0; j<i; j++){
@@ -39,21 +39,21 @@
 		    history[i]=c;
 		    dfs(i+1);
 		}
-	    }
-	}
+    }
+}
 
-	int main(){
-	    freopen("1116.txt","r",stdin);
+int main(){
+    freopen("1116.txt","r",stdin);
 
-	    cin>>n;
+    cin>>n;
 
-	    for(int i=0; i<n; i++){
+    for(int i=0; i<n; i++){
 		for(int j=0; j<n; j++){
 		    cin>>mm[i][j];
 		}
-	    }
+    }
 
-	    dfs(0);
+    dfs(0);
 
-	    cout<<count<<endl;
-	}
+    cout<<count<<endl;
+}
